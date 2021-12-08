@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,400;1,500&display=swap');
+
+*{
+  font-family: 'IBM Plex Sans', sans-serif ;
+  transition: all 1s ease-in-out;
+}
+
+.navBrandImg {
+  object-fit: contain;
+  background-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .mainNav {
+     display: none !important;
+  }
+}
+
+.navLink {
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #031d44;
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+.navLink:hover{
+  opacity: 1;
+}
+.navLink::before {
+  // transition: 1s !important;
+  height: 1px;
+  content: "";
+  position: absolute;
+  background-color: #031D44;
+}
+.navLink-grow-up::before {
+  transform: scaleY(0);
+  transition: transform .5s cubic-bezier(0.95, 0.05, 0.795, 0.035) !important;
+  height: 0%;
+    width: 100%;
+    bottom: 0px;
+  }
+  .navLink-grow-up:hover::before {
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important;
+  transform: scaleY(1);
+    height: 1px;
+  }
