@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <>
     <div className='hide-mobile'>
-      <nav className='navbar mainNav hidden-sm hidden-xs navbar-expand-lg navbar-light bg-light'>
+      <nav className='navbar mainNav hidden-sm hidden-xs navbar-expand-lg navbar-light bg-light' style={{flexWrap:'nowrap'}}>
         <div className='container-fluid d-flex flex-row px-1 py-1 justify-content-between'>
           <a className=' navbar-brand' style={{objectFit:'contain'}} href='/'>
             <img

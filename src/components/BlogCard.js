@@ -18,14 +18,18 @@ export default function BlogCard (props) {
         boxShadow:' 0px 0px 0px 1px rgb(74 73 73 / 24%)',
         marginLeft: {
           xs: '0px',
-          md: '10px',
-          lg: '90px'
+          sm: '0px',
+          md: '0px',
+          lg: '10px',
+          xl: '90px'
         },
         width: {
-          xs: 'auto',
-          sm: 'auto',
-          md: 500,
-          lg: 627
+          xs: '100%',
+          sm: '100%',
+          md: '100%',
+          lg: '100%',
+          xl: 650,
+          xxl: 680
         },
         margin: {
           sm: 'auto'

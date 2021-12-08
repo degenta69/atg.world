@@ -11,5 +11,13 @@ $theme-colors: (
     'glass': transparent
 );
 
+$position-values: (
+    0: 0,
+    20: 20%,
+    50: 50%,
+    87: 87%,
+    100: 100%
+);
+
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

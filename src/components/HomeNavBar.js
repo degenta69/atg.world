@@ -7,6 +7,7 @@ import { Box } from '@mui/system'
 const HomeNavBar = () => {
   return (
     <>
+    <MediaQuery minWidth={767}>
     <div>
       <nav
         className='navbar mainNav hidden-phone navbar-expand-lg navbar-light bg-light'
@@ -63,16 +64,17 @@ const HomeNavBar = () => {
       </nav>
       <hr style={{position:'relative', borderBottom: '1px solid rgb(100,100,100)',width:'85%',margin:'auto',marginBottom:'2rem'}} />
     </div>
+    </MediaQuery>
     <MediaQuery maxWidth={767}>
       <nav className='navbar navbar-light bg-light' style={{position:'relative',paddingBottom: '0rem',width:'85%',margin:'auto' }}>
         <div className='container-fluid d-flex flex-row px-1 py-1 justify-content-between'>
-        <a className='navLink active navLink-grow-up ' href='/'>
-              Post(32)
-        </a>
+        <h6 className='my-auto fw-bolder' style={{fontWeight:'700',fontSize:'15px'}} href='/'>
+              Posts(368)
+        </h6>
           <div>
 
           <a className='btn btn-plain-5 text-dark bg-secondary ' href='\' type='button'>
-              Filter All<i class="fa fa-angle-down mx-1" aria-hidden="true"></i>
+             <span style={{fontWeight:'500', fontSize:'13px'}}>Filter All</span><i class="fa fa-angle-down mx-1" aria-hidden="true"></i>
           </a>
           </div>
          
