@@ -62,6 +62,10 @@ const LoginSide = (props) => {
                 /> */}
                 <div className={`${matches?'':'d-grid gap-2'} my-3`}>
                   <button
+                  onClick={() => {
+                    localStorage.setItem('loggedIn',true)
+                    alert('please refresh the page to see the logged in state')
+                  }}
                     className='btn btn-primary text-white '
                     style={{ backgroundColor: '#2f6ce5', borderRadius: '20px', fontWeight:'500',width:`${matches?'50%':''}` }}
                     type='button'

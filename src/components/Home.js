@@ -1,18 +1,21 @@
-import Card1_img from './Card1_img.png';
-import Card2_img from './Card2_img.png';
-import Card3_img from './Card3_img.png';
+import Card1_img from './Card1_img.png'
+import Card2_img from './Card2_img.png'
+import Card3_img from './Card3_img.png'
 import React from 'react'
 import Banner from './Banner'
 import HomeNavBar from './HomeNavBar'
 import BlogCard from './BlogCard'
 import {
+  Avatar,
   FormControl,
   FormHelperText,
   Input,
-  InputAdornment
+  InputAdornment,
+  Typography
 } from '@mui/material'
 import MediaQuery from 'react-responsive'
 import { Box } from '@mui/system'
+import { red } from '@mui/material/colors'
 
 const Home = () => {
   // const [imgURL, setimgURL] = useState([])
@@ -46,11 +49,13 @@ const Home = () => {
 
   const imgURL = [
     {
-      alt_description: 'I’ve worked in UX for the better part of a decade. From now on, I plan to rei…',
-      description: 'What if famous brands had regular fonts? Meet RegulaBrands!',
+      alt_description:
+        'I’ve worked in UX for the better part of a decade. From now on, I plan to rei…',
+      description:
+        'What if famous brands had regular fonts? Meet RegulaBrands!',
       likes: '1.4k views',
       user: {
-        instagram_username: 'Sarthak Kamra',
+        instagram_username: 'Sarthak Kamra'
       },
       urls: {
         full: Card1_img,
@@ -63,11 +68,13 @@ const Home = () => {
       location: ' '
     },
     {
-      alt_description: 'I’ve worked in UX for the better part of a decade. From now on, I plan to rei…',
-      description: 'Tax Benefits for Investment under National Pension Scheme launched by Government',
+      alt_description:
+        'I’ve worked in UX for the better part of a decade. From now on, I plan to rei…',
+      description:
+        'Tax Benefits for Investment under National Pension Scheme launched by Government',
       likes: '3.6k views',
       user: {
-        instagram_username: 'Sarah West',
+        instagram_username: 'Sarah West'
       },
       urls: {
         full: Card2_img,
@@ -84,7 +91,7 @@ const Home = () => {
       description: 'Finance & Investment Elite Social Mixer @Lujiazui',
       likes: '2.3k views',
       user: {
-        instagram_username: 'Ronal Jones',
+        instagram_username: 'Ronal Jones'
       },
       urls: {
         full: Card3_img,
@@ -101,7 +108,7 @@ const Home = () => {
       description: 'Software Developer',
       likes: '1.4k views',
       user: {
-        instagram_username: 'Joseph Gray',
+        instagram_username: 'Joseph Gray'
       },
       urls: {
         full: null,
@@ -126,9 +133,7 @@ const Home = () => {
               return (
                 <BlogCard
                   alt={key.alt_description}
-                  title={
-                    key.description
-                  }
+                  title={key.description}
                   likes={key.likes}
                   userName={key.user.instagram_username}
                   imgURL={key.urls.full}
@@ -142,9 +147,13 @@ const Home = () => {
               )
             })}
           </div>
-          <div className='col d-flex justify-content-center'>
+          <div
+            className='col d-flex flex-column'
+            style={{ marginLeft: '8%', marginRight: '8%' }}
+          >
             <FormControl
               variant='standard'
+              className='d-flex justify-content-center'
               sx={{
                 marginLeft: '10px',
                 width: {
@@ -171,7 +180,10 @@ const Home = () => {
                   </InputAdornment>
                 }
               />
-              <FormHelperText sx={{ marginTop: '20px', flexWrap: 'wrap' }}>
+              <FormHelperText
+                className='my-5'
+                sx={{ marginTop: '20px', flexWrap: 'wrap' }}
+              >
                 <i
                   class='fa fa-info-circle'
                   style={{ marginRight: '8.33px' }}
@@ -181,31 +193,180 @@ const Home = () => {
                 personalised experience.
               </FormHelperText>
             </FormControl>
+            <div style={{display:`${localStorage.getItem('loggedIn')?'':'none'}`}}>
+              <Typography
+                className=' text-black'
+                sx={{ fontSize: '20px', marginLeft: '20%', flexWrap: 'nowrap' }}
+              >
+                <i class='fa fa-thumbs-up' aria-hidden='true'></i> RECOMMENDED
+                GROUPS
+              </Typography>
+              <Box sx={{ padding: '10px' }}>
+                <div className='d-flex my-3 flex-row justify-content-between'>
+                  <div className='d-flex justify-content-center flex-row'>
+                  <Avatar sx={{ bgcolor: red[500] }} aria-label='recipe'>
+                    R
+                  </Avatar>
+                  <Typography
+                    variant='p'
+                    sx={{
+                      fontWeight:'400',
+                      fontSize:'15px',
+                      marginLeft: '15%',
+                      width: { xs: '8em', sm: '8em', md: '8em', lg: 'auto' }
+                    }}
+                    className='d-flex flex-column fw-bolder my-auto'
+                  >
+                    leisure
+                    </Typography>
+                  </div>
+
+
+                    <a
+                      className='btn btn-outline-transparent bg-secondary'
+                      href='\'
+                      type='button'
+                      style={{
+                        padding:'2px',
+                        borderRadius:'14px',
+                        fontSize: '12px',
+                        height: '24px',
+                        width: '68px'
+                      }}
+                    >
+                      Follow
+                    </a>
+                </div>
+                <div className='d-flex my-3 flex-row justify-content-between'>
+                  <div className='d-flex justify-content-center flex-row'>
+                  <Avatar sx={{ bgcolor: red[500] }} aria-label='recipe'>
+                    R
+                  </Avatar>
+                  <Typography
+                    variant='p'
+                    sx={{
+                      fontWeight:'400',
+                      fontSize:'15px',
+                      marginLeft: '15%',
+                      width: { xs: '8em', sm: '8em', md: '8em', lg: 'auto' }
+                    }}
+                    className='d-flex flex-column fw-bolder my-auto'
+                  >
+                    Activism
+                    </Typography>
+                  </div>
+
+
+                    <a
+                      className='btn btn-outline-transparent bg-secondary'
+                      href='\'
+                      type='button'
+                      style={{
+                        padding:'2px',
+                        borderRadius:'14px',
+                        fontSize: '12px',
+                        height: '24px',
+                        width: '68px'
+                      }}
+                    >
+                      Follow
+                    </a>
+                </div>
+                <div className='d-flex my-3 flex-row justify-content-between'>
+                  <div className='d-flex justify-content-center flex-row'>
+                  <Avatar sx={{ bgcolor: red[500] }} aria-label='recipe'>
+                    R
+                  </Avatar>
+                  <Typography
+                    variant='p'
+                    sx={{
+                      fontWeight:'400',
+                      fontSize:'15px',
+                      marginLeft: '15%',
+                      width: { xs: '8em', sm: '8em', md: '8em', lg: 'auto' }
+                    }}
+                    className='d-flex flex-column fw-bolder my-auto'
+                  >
+                    MBA
+                    </Typography>
+                  </div>
+
+
+                    <a
+                      className='btn btn-outline-transparent bg-secondary'
+                      href='\'
+                      type='button'
+                      style={{
+                        padding:'2px',
+                        borderRadius:'14px',
+                        fontSize: '12px',
+                        height: '24px',
+                        width: '68px'
+                      }}
+                    >
+                      Follow
+                    </a>
+                </div>
+                <div className='d-flex my-3 flex-row justify-content-between'>
+                  <div className='d-flex justify-content-center flex-row'>
+                  <Avatar sx={{ bgcolor: red[500] }} aria-label='recipe'>
+                    R
+                  </Avatar>
+                  <Typography
+                    variant='p'
+                    sx={{
+                      fontWeight:'400',
+                      fontSize:'15px',
+                      marginLeft: '15%',
+                      width: { xs: '8em', sm: '8em', md: '8em', lg: 'auto' }
+                    }}
+                    className='d-flex flex-column fw-bolder my-auto'
+                  >
+                    Phylisophy
+                    </Typography>
+                  </div>
+
+
+                    <a
+                      className='btn btn-outline-transparent bg-secondary'
+                      href='\'
+                      type='button'
+                      style={{
+                        padding:'2px',
+                        borderRadius:'14px',
+                        fontSize: '12px',
+                        height: '24px',
+                        width: '68px'
+                      }}
+                    >
+                      Follow
+                    </a>
+                </div>
+              </Box>
+            </div>
           </div>
         </div>
       </MediaQuery>
       <MediaQuery maxWidth={1088}>
         <HomeNavBar />
         <div className='overflow-visible'>
-        {imgURL.map(key => {
-          return (
-            <BlogCard
-              alt={key.alt_description}
-              title={
-                key.description
-              }
-              likes={key.likes}
-              userName={key.user.instagram_username}
-              imgURL={key.urls.full}
-              tagText={key.tag.text}
-              tagEmoji={key.tag.emoji}
-              buttonState={key.button}
-              buttonText={key.buttonText}
-              date={key.date}
-              location={key.location}
-            />
-          )
-        })}
+          {imgURL.map(key => {
+            return (
+              <BlogCard
+                alt={key.alt_description}
+                title={key.description}
+                likes={key.likes}
+                userName={key.user.instagram_username}
+                imgURL={key.urls.full}
+                tagText={key.tag.text}
+                tagEmoji={key.tag.emoji}
+                buttonState={key.button}
+                buttonText={key.buttonText}
+                date={key.date}
+                location={key.location}
+              />
+            )
+          })}
         </div>
         <MediaQuery maxWidth={907}>
           <Box

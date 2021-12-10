@@ -1,44 +1,42 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import { Box } from '@mui/system'
 import { Typography } from '@mui/material'
 import bannerImg from './Banner.png'
 // import moduleName from './Card1_img.png'
 
 const Banner = () => {
-  const [imgURL, setimgURL] = useState('')
 
   // console.log(data.results[Math.floor(Math.random()*10) || Math.floor(Math.random()*10) || Math.floor(Math.random()*10) ].urls.full)
-  useEffect(() => {
-    const getIMG = async () => {
-      try {
-        const config = {
-          method: 'get',
-          mode: 'cors',
-          url:
-            'https://api.unsplash.com/search/photos?client_id=dRaQNADpo6jm1SKfaGeLWgv_DeRbJdxnJRAIeKfGriI&page=1&query=programming'
-        }
-        const res = await axios(config)
-        //   console.log(res.data.results)
-        if (res.data.results) {
-          setimgURL(
-            res.data.results[
-              Math.floor(Math.random() * 10) ||
-                Math.floor(Math.random() * 10) ||
-                Math.floor(Math.random() * 10)
-            ].urls.full
-          )
-          // console.log(imgURL)
-        } else {
-          setimgURL(res)
-        }
-      } catch (error) {
-        alert(error)
-        // console.log(imgURL)
-      }
-    }
-    getIMG()
-  }, [])
+  // useEffect(() => {
+  //   const getIMG = async () => {
+  //     try {
+  //       const config = {
+  //         method: 'get',
+  //         mode: 'cors',
+  //         url:
+  //           'https://api.unsplash.com/search/photos?client_id=dRaQNADpo6jm1SKfaGeLWgv_DeRbJdxnJRAIeKfGriI&page=1&query=programming'
+  //       }
+  //       const res = await axios(config)
+  //       //   console.log(res.data.results)
+  //       if (res.data.results) {
+  //         setimgURL(
+  //           res.data.results[
+  //             Math.floor(Math.random() * 10) ||
+  //               Math.floor(Math.random() * 10) ||
+  //               Math.floor(Math.random() * 10)
+  //           ].urls.full
+  //         )
+  //         // console.log(imgURL)
+  //       } else {
+  //         setimgURL(res)
+  //       }
+  //     } catch (error) {
+  //       alert(error)
+  //       // console.log(imgURL)
+  //     }
+  //   }
+  //   getIMG()
+  // }, [])
   return (
     <>
       <div

@@ -82,6 +82,9 @@ const SignupMobile = () => {
                 />
                 <div className='d-grid my-3 gap-2'>
                   <button
+                    onClick={() => {
+                      localStorage.setItem('loggedIn', true)
+                    }}
                     className='btn btn-primary text-white '
                     style={{ backgroundColor: '#2f6ce5', borderRadius: '20px', fontWeight:'500',width:'40%' }}
                     type='button'
