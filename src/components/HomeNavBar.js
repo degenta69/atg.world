@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bootstrap'
 import '../App.scss'
 import MediaQuery from 'react-responsive'
 import { Box } from '@mui/system'
+import AuthModal from './AuthModal'
 
 const HomeNavBar = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
     <MediaQuery minWidth={767}>
@@ -56,9 +61,10 @@ const HomeNavBar = () => {
               <i class='fa fa-arrow-circle-down h-50 mx-1' aria-hidden='true'></i>
             </a>
               </MediaQuery>
-            <a className='btn btn-outline-navyBlue' href='\' type='button'  style={{ fontSize: '0.9em', flexWrap:'nowrap' , height: '36px', width: '133px' }}>
+            <button onClick={handleOpen} className='btn btn-outline-navyBlue' href='\' type='button'  style={{ fontSize: '0.9em', flexWrap:'nowrap' , height: '36px', width: '133px' }}>
               <i class='fa fa-group h-50 mx-1' aria-hidden='true'></i>    Join Group
-            </a>
+            </button>
+        <AuthModal open={open} handleClose={handleClose}/>
           </div>
         </div>
       </nav>

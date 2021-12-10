@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Box, typography } from '@mui/system'
+import { Box } from '@mui/system'
 import { Typography } from '@mui/material'
+import bannerImg from './Banner.png'
+// import moduleName from './Card1_img.png'
 
 const Banner = () => {
   const [imgURL, setimgURL] = useState('')
@@ -26,13 +28,13 @@ const Banner = () => {
                 Math.floor(Math.random() * 10)
             ].urls.full
           )
-          console.log(imgURL)
+          // console.log(imgURL)
         } else {
           setimgURL(res)
         }
       } catch (error) {
         alert(error)
-        console.log(imgURL)
+        // console.log(imgURL)
       }
     }
     getIMG()
@@ -53,7 +55,7 @@ const Banner = () => {
           className=' text-white'
           style={{
             opacity: '1',
-            backgroundImage: ` url("${imgURL}")`,
+            backgroundImage:`url(${bannerImg})`,
             height: '440px',
             width: '100%',
             position: 'relative',

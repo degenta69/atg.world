@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../App.scss'
 import atg_logo from './nav_img_whole.png'
 import MediaQuery from "react-responsive";
+import MobileAuthModal from './MobileAuthModal';
 
-// import { Container, Nav, Navbar, NavbarBrand, NavDropdown } from 'react-bootstrap'
 
 const NavBar = () => {
+  const [show, setshow] = useState(false);
+  const [text, settext] = useState(true);
+  
+  const handleOpen=()=>{
+    setshow(prev => !prev)
+    settext(prev => !prev)
+    // if(show){
+    //   document.getElementById('grp').innerText='Leave Group'
+    // }else{
+    //   document.getElementById('grp').innerText='Join Group'
+    // }
+  }
   return (
     <>
     <div className='hide-mobile'>
@@ -45,11 +57,12 @@ const NavBar = () => {
             >
              
               
-              <li className='nav-item  dropdown'>
+              <li className='nav-item '>
                 <a
-                  className='text-dark dropdown-toggle'
+                  className='text-dark btn-glass bg-transparent dropdown-toggle'
+                  disabled
                   href='/'
-                  style={{textDecoration:'none' ,marginRight:'72px',fontWeight:'500'}}
+                  style={{textDecoration:'none',border:'none' ,marginRight:'72px',fontWeight:'500'}}
                   id='navbarScrollingDropdown'
                   role='button'
                   data-bs-toggle='dropdown'
@@ -57,29 +70,6 @@ const NavBar = () => {
                 >
                   Create account. <span className='text-navyBlue fw-bold'>It's Free</span> 
                 </a>
-                <ul
-                  className='dropdown-menu'
-                  aria-labelledby='navbarScrollingDropdown'
-                >
-                  <li>
-                    <a className='dropdown-item' href='/'>
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a className='dropdown-item' href='/'>
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className='dropdown-divider' />{' '}
-                  </li>
-                  <li>
-                    <a className='dropdown-item' href='/'>
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
               </li>
             </ul>
         </div>
@@ -90,11 +80,12 @@ const NavBar = () => {
         <div className='container-fluid d-flex flex-row px-1 py-1 justify-content-between'>
           <i className="fa fa-arrow-left h-100" style={{marginLeft:'4%'}} aria-hidden="true"></i>
           
-          <button className='btn btn-glass' onClick={()=>{document.getElementById('grp').innerText='Leave Group'}} id='grp' type='button'  style={{border:'0.8px solid' ,height: '36px', width: '133px' }}>
-              Join Group
+          <button className='btn btn-glass' onClick={handleOpen} id='grp' type='button'  style={{border:'0.8px solid' ,height: '36px', width: '133px' }}>
+             {text?'Join Group':'Leave Group'}
           </button>
          
         </div>
+          <MobileAuthModal show={show} handleClose={handleOpen}/>
       </nav>
       </MediaQuery>
     </>
